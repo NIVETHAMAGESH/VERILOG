@@ -15,7 +15,7 @@ eg :Not alowed
 	wire - z (high impedance - unconnected net)
 
 
-2.The difference between the operators
+3.The difference between the operators
 
 == and ===
 != and !==
