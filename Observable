@@ -1,0 +1,25 @@
+1.Module nestings are illegal instead instances(copies) are allowed
+eg :Not alowed
+     
+     module xxx();
+	module yyy();
+
+	-------------
+
+	endmodule
+     endmodule 
+
+2. Default values
+
+	reg - x (unknown - empty storage box )
+	wire - z (high impedance - unconnected net)
+
+
+2.The difference between the operators
+
+== and ===
+!= and !==
+
+Left - Logical equivalence check 
+Right - case equivalence check ( sees for exact match of each bits - answers in 0/1 only)
+
