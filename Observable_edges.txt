@@ -23,3 +23,20 @@ eg :Not alowed
 Left - Logical equivalence check 
 Right - case equivalence check ( sees for exact match of each bits - answers in 0/1 only)
 
+
+4.Non-synthesizable Verilog constructs (few to be remembered)
+
+	initial
+	UDPs
+	Fork and join
+
+Refer here
+
+5.Operator that maps to specific hardwares
+
+	Conditional operator - MUX
+	always @( posedge or negedge ) - a storage element(reg)
+
+
+
+
