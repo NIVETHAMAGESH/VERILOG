@@ -9,6 +9,8 @@ eg :Not alowed
 	endmodule
      endmodule 
 
+Modules communicate through ports
+
 2. Default values
 
 	reg - x (unknown - empty storage box )
@@ -36,6 +38,51 @@ Refer here
 
 	Conditional operator - MUX
 	always @( posedge or negedge ) - a storage element(reg)
+
+
+9.Leaving output port unconnected - Not an error
+  Leaving input port unconnected - Error ( since 'Z' induces unexpected behaviour)
+
+10.wire A ;
+   input wire A ;   statements mean the same
+
+Eg: 
+wire B ;
+assign B = sel;	wire B = sel;	assign wire B = sel;
+
+Note : multiple assignments to a single net can be resolved using wand/wor else it leads to unknown value(X)
+       multiple assignments to a reg eventually evaluates to 0/1 .
+
+
+11. SYNTHESIS :
+	The tool infers logic from the HDL source ,maps the inferred logic to the technology library macros and optimizes the circuit to meet constraints
+
+12. Challenge 3: What does the following Verilog snippet maps to ?
+
+always@(posedge clk)
+begin
+	if(enb)
+	  q<= d;
+end
+
+a FF  or a Latch ? --> A latch : what if the 'enb' holds 0 --> infers a hidden storage(latch)
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
