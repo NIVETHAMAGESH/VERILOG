@@ -39,6 +39,33 @@ Refer here
 	Conditional operator - MUX
 	always @( posedge or negedge ) - a storage element(reg)
 
+6. Generic rule
+
+Blocking assignments (=) for combo logic
+Non-blocking assignments (<=) for sequential logic
+
+7.Challenge 1 : Without using the "always" keyword illustrate its behaviour using "initial" construct
+
+always @()
+   begin
+      -----
+   end	initial
+    forever 
+       begin
+         ------
+       end
+
+
+Note : always is synthesizable but forever is not
+
+8.Chanllenge 2 : Having a full adder module constructed
+
+To have a 4-bit FA: instantiate 4 copies
+To have a 8-bit FA: instantiate 8 copies
+
+what if the adder is of 32 bits / 64 bits ?
+
+use : generate , endgenerate construct (synthesizable)
 
 9.Leaving output port unconnected - Not an error
   Leaving input port unconnected - Error ( since 'Z' induces unexpected behaviour)
