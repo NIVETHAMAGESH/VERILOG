@@ -10,7 +10,7 @@ eg :Not allowed
 
 
 
- 	-------------
+ 	---------------
 
 
 
@@ -28,8 +28,8 @@ Modules communicate through ports
 
 
 
-*  	reg - x (unknown - empty storage box )
-*  	wire - z (high impedance - unconnected net)
+*  	reg --> x (unknown    empty storage box )
+*  	wire --> z (high impedance    unconnected net)
 
 
 
@@ -44,15 +44,15 @@ Modules communicate through ports
 
 
 
-Left - Logical equivalence check
+Left --> Logical equivalence check
 
-Right - case equivalence check ( sees for exact match of each bits - answers in 0/1 only)
-
-
+Right--> case equivalence check ( sees for exact match of each bits---> answers in 0/1 only)
 
 
 
-###### 4.Non-synthesizable Verilog constructs (few to be remembered)
+
+
+###### 4.Non  synthesizable Verilog constructs (few to be remembered)
 
 
 
@@ -70,8 +70,8 @@ Right - case equivalence check ( sees for exact match of each bits - answers in 
 
 
 
-*  	Conditional operator - MUX
-*  	always @( posedge or negedge ) - a storage element(reg)
+*  	Conditional operator-->MUX
+*  	always @( posedge or negedge )--> a storage element(reg)
 
 
 
@@ -80,7 +80,7 @@ Right - case equivalence check ( sees for exact match of each bits - answers in 
 
 
 * Blocking assignments (=) for combo logic
-* Non-blocking assignments (<=) for sequential logic
+* Non  blocking assignments (<=) for sequential logic
 
 
 
@@ -88,16 +88,16 @@ Right - case equivalence check ( sees for exact match of each bits - answers in 
 
 
 
-|always @()<br />   begin<br />      -----<br />   end|initial<br />    forever <br />       begin<br />         ------<br />       end<br />|
+|always @()<br />   begin<br />        ---------        <br />   end|initial<br />    forever <br />       begin<br />          --------           <br />       end<br />|
 |-|-|
 
 
 
 Note :  always is synthesizable but forever is not
 
-&nbsp;	always is event-driven and synthesizable, while forever creates infinite loops for simulation purposes.
+ 	always is event  driven and synthesizable, while forever creates infinite loops for simulation purposes.
 
-&nbsp;	forever is not synthesizable; use event-driven constructs for hardware implementation.
+ 	forever is not synthesizable; use event  driven constructs for hardware implementation.
 
 
 
@@ -105,9 +105,9 @@ Note :  always is synthesizable but forever is not
 
 
 
-To have a 4-bit FA: instantiate 4 copies
+To have a 4  bit FA: instantiate 4 copies
 
-To have a 8-bit FA: instantiate 8 copies
+To have a 8  bit FA: instantiate 8 copies
 
 
 
@@ -119,9 +119,9 @@ what if the adder is of 32 bits / 64 bits ?
 
 
 
-###### 9.Leaving output port unconnected - Not an error
+###### 9.Leaving output port unconnected-->Not an error
 
-######   Leaving input port unconnected - Error ( since 'Z' induces unexpected behaviour)
+######   Leaving input port unconnected--> Error ( since 'Z' induces unexpected behaviour)
 
 ###### 
 
@@ -170,13 +170,13 @@ end
 
 
 
-a FF  or a Latch ? --> A latch : what if the 'enb' holds 0 --> infers a hidden storage(latch)
+a FF  or a Latch ? ----> A latch : what if the 'enb' holds 0 ---> infers a hidden storage(latch)
 
 
 
 
 
-###### 13.Can You Declare and Initialize a wire in the Same Statement?  
+###### 13.Can You Declare and Initialize a wire in the Same Statement?
 
 
 
@@ -184,17 +184,17 @@ No, the statement wire d = 0; is not valid in Verilog. A wire cannot be initiali
 
 
 
-&nbsp;Explanation   :
+ Explanation   :
 
-\- A wire represents a physical connection in hardware. It is driven by continuous assignments or outputs from other modules or gates.
+   A wire represents a physical connection in hardware. It is driven by continuous assignments or outputs from other modules or gates.
 
-\- wire cannot hold a value by itself and therefore cannot be initialized directly.
+   wire cannot hold a value by itself and therefore cannot be initialized directly.
 
 
 
-&nbsp;Correct Usage   :
+ Correct Usage   :
 
-To assign a constant value to a wire, use the   assign   keyword:
+To assign a constant value to a wire, use the "assign" keyword:
 
 
 
@@ -208,7 +208,7 @@ assign d = 0; // Correct way to assign a constant value to a wire
 
 
 
-Alternatively, if you need to hold a value, use the   reg   type (or logic in SystemVerilog):
+Alternatively, if you need to hold a value, use the "reg "type (or logic in SystemVerilog):
 
 
 
@@ -218,31 +218,21 @@ reg d = 0; // Valid: 'd' is initialized to 0
 
 
 
+ 
 
-
-###### 14. Difference Between always and forever Loops  
-
-
-
-|    Feature                |               always Block                   | forever Loop                          |---------------------------|----------------------------------------------|-----------------------------------------
-
-|    Purpose                | Describes a repeating hardware process       | Implements an infinite software-style loop 
-
-|    Control                | Triggered by events in a sensitivity list    | Executes continuously without a condition 
-
-|    Context                | Used in combinational or sequential logic    | Used for testbenches or signal generation 
-
-|    Scope                  | Ends when simulation ends or block is disabled | Runs infinitely unless manually terminated 
+###### 14\. Difference Between always and forever Loops
 
 
 
 
 
-###### main difference between forever and always 🡪 synthesizability
+|               Feature|                 always Block|                forever Loop|
+|-|-|-|
+|Purpose<br />Control<br />Context<br />Scope|  Describes a repeating hardware process   <br />&nbsp; Triggered by events in a sensitivity list    <br />&nbsp; Used in combinational or sequential logic  <br /> Ends when simulation ends or block is disabled    <br />&nbsp;    |Implements an infinite software  style loop<br />Executes continuously without a condition<br />Used for testbenches or signal generation<br />Runs infinitely unless manually terminated|
 
-###### &nbsp;
+###### 
 
+main difference between forever and always 🡪 synthesizability
 
-
-
+######  
 
