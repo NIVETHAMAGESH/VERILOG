@@ -2,21 +2,15 @@
 
 eg :Not allowed
 
- 
+ ```verilog
+module xxx();
+module yyy();
 
-     module xxx();
+--------------
 
- 	module yyy();
-
-
-
- 	---------------
-
-
-
- 	endmodule
-
-     endmodule
+endmodule
+endmodule
+``` 
 
 
 
@@ -226,13 +220,16 @@ reg d = 0; // Valid: 'd' is initialized to 0
 
 
 
-|               Feature|                 always Block|                forever Loop|
+|Feature|                 always Block|forever Loop|
 |-|-|-|
-|Purpose<br />Control<br />Context<br />Scope|  Describes a repeating hardware process   <br />&nbsp; Triggered by events in a sensitivity list    <br />&nbsp; Used in combinational or sequential logic  <br /> Ends when simulation ends or block is disabled    <br />&nbsp;    |Implements an infinite software  style loop<br />Executes continuously without a condition<br />Used for testbenches or signal generation<br />Runs infinitely unless manually terminated|
+|Purpose<br />Control<br />Context<br />Scope|  <br />Describes a repeating hardware process   <br />  Triggered by events in a sensitivity list    <br />  Used in combinational or sequential logic  <br /> Ends when simulation ends or block is disabled    <br /> |Implements an infinite software  style loop<br />Executes continuously without a condition<br />Used for testbenches or signal generation<br />Runs infinitely unless manually terminated|
 
 ###### 
 
 main difference between forever and always 🡪 synthesizability
+
+
+
 
 ######  
 
